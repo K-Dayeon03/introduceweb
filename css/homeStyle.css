@@ -1,0 +1,386 @@
+/* Reset and basic styling */
+html {
+  scroll-behavior: smooth;
+  scroll-padding: 10rem;
+}
+
+body {
+  overflow: scroll;
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  background: linear-gradient(180deg, #e3ffe7 0%, #c6e7ff 100%) fixed;
+}
+
+/* Color variables */
+:root {
+  --background-color: #dcf2f1;
+  --icons-color: #000;
+  --text-color: #000;
+  --contents-color: pink;
+}
+
+/* Link styling */
+a {
+  text-decoration: none;
+  color: var(--text-color);
+}
+
+li {
+  list-style: none;
+}
+
+/* Navigation Bar styling */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(0deg, #e3ffe7 0%, #c6e7ff 90%);
+  padding: 8px 12px;
+  box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
+}
+
+.navbar_logo {
+  font-size: 24px;
+  margin: 10px;
+}
+
+.navbar_logo:hover {
+  opacity: 60%;
+}
+
+.navbar_logo i {
+  color: var(--icons-color);
+}
+
+.navbar_logo a {
+  padding-left: 5px;
+}
+
+.navbar_menu {
+  display: flex;
+  padding-left: 0;
+}
+
+.navbar_menu li {
+  padding: 8px 12px;
+}
+
+.navbar_menu li:hover {
+  background-color: pink;
+  border-radius: 4px;
+}
+
+.navbar_icons {
+  list-style: none;
+  color: #000;
+  display: flex;
+  padding-left: 0;
+}
+
+.navbar_icons li:hover {
+  opacity: 50%;
+  cursor: pointer;
+}
+
+.navbar_icons li {
+  padding: 8px 12px;
+  font-size: 25px;
+}
+
+.navbar_toggleBtn {
+  display: none;
+  position: absolute;
+  right: 32px;
+  font-size: 24px;
+  color: var(--icons-color);
+  top: 18px;
+}
+
+/* Responsive design for Navigation Bar */
+@media screen and (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 8px 24px;
+  }
+
+  .navbar_menu {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  .navbar_menu li {
+    width: 100%;
+    text-align: center;
+  }
+
+  .navbar_icons {
+    display: none;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .navbar_toggleBtn {
+    display: block;
+  }
+
+  .navbar_menu.active,
+  .navbar_icons.active {
+    display: flex;
+  }
+  .main_contents {
+    height: 100%;
+    padding: 0;
+    position: relative;
+  }
+  .main_contents h1 {
+    opacity: 0;
+  }
+
+  .main_contents_text {
+    font-size: 1.5em;
+    padding: 10px;
+    opacity: 1; /* 초기에 투명하게 시작 */
+    position: relative;
+  }
+
+  .contents_img {
+    max-width: 400px;
+  }
+  .wrap {
+    padding: 10px;
+    flex-direction: column;
+    align-items: center;
+    display: block;
+    width: 100%;
+  }
+  footer {
+    flex-direction: column; /* 변경: 작은 화면에서 세로 방향으로 정렬 */
+  }
+}
+
+.sns {
+  margin-top: 0; /* 변경: 작은 화면에서 아이콘 간격 조절 해제 */
+}
+
+/* Main Content styling */
+.contents {
+  height: 100%;
+  /* background: url(/images/background-dot.png) fixed; */
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.main_contents {
+  text-align: center;
+  padding: 50px;
+  position: relative;
+}
+
+.main_contents h1 {
+  color: #000;
+  margin: 0;
+  position: absolute;
+  top: 300px;
+  left: 100px;
+}
+
+.main_contents_text {
+  font-size: 3em;
+  animation: txtslide 1s ease-out forwards; /* 기본 애니메이션 적용 */
+}
+
+.contents_img {
+  width: 100%;
+  max-width: 400px; /* 이미지의 최대 너비를 설정합니다. */
+  height: auto; /* 가로 비율에 따라 세로 크기를 자동으로 조절합니다. */
+}
+
+/* Animation keyframes */
+@keyframes txtslide {
+  from {
+    left: -100px;
+    opacity: 0;
+  }
+  to {
+    left: 100px;
+    opacity: 1;
+  }
+}
+
+@keyframes disappearslide {
+  from {
+    left: 100;
+    opacity: 1;
+  }
+  to {
+    left: -100px;
+    opacity: 0;
+  }
+}
+
+@keyframes appeaer {
+  from {
+    left: -100;
+    opacity: 0;
+  }
+  to {
+    left: -100;
+    opacity: 0;
+  }
+}
+/* Card Section styling */
+.container {
+  text-align: center;
+  margin-top: 100px;
+  margin-bottom: 100px;
+  flex: 1;
+}
+
+.card-box {
+  position: relative;
+  width: 100%;
+  height: 340px;
+  border-radius: 16px;
+  box-shadow: 0 20px 35px rgba(0, 0, 0, 0.26);
+  overflow: hidden;
+  display: inline-block;
+  margin: 10px;
+  max-width: 280px;
+  transition: 0.5s;
+}
+
+.card-box:hover {
+  transform: scale(0.95);
+}
+
+#card-pick {
+  transform: scale(1.1);
+}
+
+.img-icon {
+  width: 100%;
+  height: auto;
+  cursor: pointer;
+  height: auto;
+}
+
+.img-gradient {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 1));
+  z-index: 1;
+}
+
+.text-wrap {
+  position: absolute;
+  bottom: 0;
+  padding: 24px;
+  z-index: 2;
+  text-align: left;
+}
+
+.text-wrap h1 {
+  color: #fff;
+  font-size: 24px;
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+.text-wrap p {
+  color: #fff;
+  font-size: 18px;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.play-btn {
+  width: 60px;
+  height: 60px;
+  position: absolute;
+  right: 24px;
+  top: 24px;
+  /* background: azure url(/images/terminal-solid.svg) no-repeat center; */
+  background-size: 40px;
+  border-radius: 50%;
+  z-index: 2;
+}
+
+/* Footer Section styling */
+.fwrap {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+footer {
+  width: 100%;
+  height: 100%;
+  background: #f5f5f5;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(rgba(255, 255, 255, 0), rgb(255, 255, 255));
+}
+
+footer p {
+  color: #000;
+}
+
+.sns {
+  display: flex;
+}
+
+.sns a {
+  color: #000;
+}
+
+.up {
+  margin-left: 100px;
+  font-size: 30px;
+  background-color: antiquewhite;
+  padding: 0px 10px 0px 10px;
+  border-radius: 5px;
+  height: 40px;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Title styling */
+.title {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: center;
+  column-gap: 1.6rem;
+  text-align: center;
+  font-size: 20px;
+}
+
+.title::before,
+.title::after {
+  content: "";
+  height: 1px;
+  background-color: #ccc;
+  display: block;
+}
+
+/* sub_contents_about */
+.sub_contents {
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.sub_contents > p {
+  justify-content: center;
+  align-items: center;
+}

@@ -1,0 +1,263 @@
+/* Reset and basic styling */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    background: linear-gradient(
+        180deg,
+        #e3ffe7 0%,
+        #c6e7ff 100%
+    ) fixed;
+}
+
+/* Color variables */
+:root {
+    --background-color: #DCF2F1;
+    --icons-color: #000;
+    --text-color: #000;
+    --contents-color: pink;
+}
+
+/* Link styling */
+a {
+    text-decoration: none;
+    color: var(--text-color);
+}
+
+li {
+    list-style: none;
+}
+
+/* Navigation Bar styling */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(
+        0deg,
+        #e3ffe7 0%,
+        #c6e7ff 90%
+    );
+    padding: 8px 12px;
+    box-shadow: 0 20px 35px rgba(0, 0, 0, 0.10);
+}
+
+.navbar_logo {
+    font-size: 24px;
+    margin: 10px;
+}
+
+.navbar_logo:hover {
+    opacity: 60%;
+}
+
+.navbar_logo i {
+    color: var(--icons-color);
+}
+
+.navbar_logo a {
+    padding-left: 5px;
+}
+
+.navbar_menu {
+    display: flex;
+    padding-left: 0;
+}
+
+.navbar_menu li {
+    padding: 8px 12px;
+}
+
+.navbar_menu li:hover {
+    background-color: pink;
+    border-radius: 4px;
+}
+
+.navbar_icons {
+    list-style: none;
+    color: #000;
+    display: flex;
+    padding-left: 0;
+}
+
+.navbar_icons li:hover {
+    opacity: 50%;
+    cursor: pointer;
+}
+
+.navbar_icons li {
+    padding: 8px 12px;
+    font-size: 25px;
+}
+
+.navbar_toggleBtn {
+    display: none;
+    position: absolute;
+    right: 32px;
+    font-size: 24px;
+    color: var(--icons-color);
+    top: 18px;
+}
+
+/* Responsive design for Navigation Bar */
+@media screen and (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 8px 24px;
+    }
+
+    .navbar_menu {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    .navbar_menu li {
+        width: 100%;
+        text-align: center;
+    }
+
+    .navbar_icons {
+        display: none;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .navbar_toggleBtn {
+        display: block;
+    }
+
+    .navbar_menu.active,
+    .navbar_icons.active {
+        display: flex;
+    }
+    .main_contents {
+        padding: 20px;
+        position: absolute;
+    }
+    .main_contents h1 {
+        opacity: 0;
+    }
+
+    .main_contents_text {
+        font-size: 1.5em;
+        padding: 10px;
+        opacity:1; /* 초기에 투명하게 시작 */
+        position: relative;        
+    }
+
+    .contents_img {
+        max-width: 300px;
+    }
+
+    footer {
+        flex-direction: column; /* 변경: 작은 화면에서 세로 방향으로 정렬 */
+    }
+
+    .sns {
+        margin-top: 0; /* 변경: 작은 화면에서 아이콘 간격 조절 해제 */
+    }
+
+}
+
+/* Main Content styling */
+.contents {
+    height: 600px;
+    background: url(/images/background-dot.png) fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.main_contents {
+    text-align: center;
+    padding: 60px;
+}
+
+.main_contents h1 {
+    color:#000;
+    margin: 0;
+    position: absolute;
+    top: 300px;
+    left: 500px;
+    
+}
+
+.main_contents_text{
+    font-size: 6em;
+
+}
+.main_contents p{
+    text-align: left;
+    margin: 0;
+    position: absolute;
+    top: 500px;
+    left: 500px;
+}
+
+.contents_img {
+    position: absolute;
+    right: 400px;
+    width: 100%;
+    max-width: 400px; /* 이미지의 최대 너비를 설정합니다. */
+    height: auto; /* 가로 비율에 따라 세로 크기를 자동으로 조절합니다. */
+}
+
+
+
+
+/* Footer Section styling */
+.fwrap {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+footer {
+    width: 100%;
+    height: 100px;
+    background: #f5f5f5;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background: linear-gradient(rgba(255, 255, 255, 0), rgb(255, 255, 255));
+
+}
+
+
+footer p {
+    color: #000;
+}
+
+.sns {
+    display: flex;
+}
+
+.sns li {
+    margin: 0 10px;
+}
+
+.sns a {
+    color: #000;
+}
+
+/* Title styling */
+.title {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+    column-gap: 1.6rem;
+    text-align: center;
+    font-size: 20px;
+}
+
+.title::before,
+.title::after {
+    content: "";
+    height: 1px;
+    background-color: #ccc;
+    display: block;
+}
